@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AgendaFirebase</string>
+    <string name="app_name">Agenda Firebase by Ángel Qui</string>
     <string name="title">Agenda Firebase</string>
     <string name="favorite">Marcar Favorito</string>
     <string name="phone_number1">Teléfono *</string>
