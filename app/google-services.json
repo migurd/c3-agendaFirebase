@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "469912245575",
+    "project_id": "agendafirebase-eaf4d",
+    "storage_bucket": "agendafirebase-eaf4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469912245575:android:09a6d672460db7b5802862",
+        "android_client_info": {
+          "package_name": "com.angelq.agendafirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxwUeafAT6fl9Xa8ux2UCLCcTA8PDyz5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
