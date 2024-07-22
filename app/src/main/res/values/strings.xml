@@ -8,7 +8,7 @@
     <string name="btn_list">Listar</string>
     <string name="btn_save">Guardar</string>
     <string name="notes">Notas</string>
-    <string name="address">Dirección</string>
+    <string name="address">Dirección *</string>
     <string name="name">Nombre *</string>
     <string name="new_string">Nuevo</string>
     <string name="text">Elementos de la Agenda</string>

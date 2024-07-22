@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import com.angelq.agendafirebase.Objects.Contacts
 import com.angelq.agendafirebase.Objects.FirebaseReferences
 import com.google.firebase.database.*
@@ -81,10 +82,7 @@ class ListActivity : ListActivity() {
             lblTelefono.text = objects[position].phoneNumber1
 
             btnBorrar.setOnClickListener {
-                borrarContacto(objects[position].id)
-                objects.removeAt(position)
-                notifyDataSetChanged()
-                Toast.makeText(context, "Contacto eliminado con éxito", Toast.LENGTH_SHORT).show()
+                mostrarDialogoConfirmacion(objects[position], position)
             }
 
             btnModificar.setOnClickListener {
@@ -98,6 +96,23 @@ class ListActivity : ListActivity() {
 
             return view
         }
+    }
+
+    private fun mostrarDialogoConfirmacion(contacto: Contacts, position: Int) {
+        val builder = AlertDialog.Builder(this@ListActivity)
+        builder.setTitle("Confirmar eliminación")
+        builder.setMessage("¿Estás seguro de que quieres eliminar este contacto?")
+        builder.setPositiveButton("Sí") { dialog, _ ->
+            borrarContacto(contacto.id)
+            (listAdapter as MyArrayAdapter).remove(contacto)
+            Toast.makeText(context, "Contacto eliminado con éxito", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+        val alert = builder.create()
+        alert.show()
     }
 
     private fun borrarContacto(childIndex: String) {
